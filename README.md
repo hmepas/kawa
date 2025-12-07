@@ -1,8 +1,10 @@
 ![logo](resource/png/logo.png)
 
-# Kawa [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/utatti/kawa/master/LICENSE) [![GitHub release](https://img.shields.io/github/release/utatti/kawa.svg)](https://github.com/utatti/kawa/releases)
+# Kawa (fork) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/utatti/kawa/master/LICENSE)
 
-A macOS input source switcher with user-defined shortcuts.
+A macOS input source switcher with user-defined shortcuts. This is a fork of
+[utatti/kawa](https://github.com/utatti/kawa) with a refreshed toolchain and new
+shortcuts UI.
 
 ## Demo
 
@@ -41,6 +43,13 @@ command line:
 xcodebuild -resolvePackageDependencies
 xcodebuild -scheme kawa -configuration Debug
 ```
+
+## What's new in this fork
+- Swift 5 toolchain; MASShortcut now comes via Swift Package Manager (no Carthage).
+- Shortcut screen upgrades:
+  - Same shortcut can be assigned to multiple input sources; pressing it cycles through them.
+  - Input sources are draggable to change their cycling order.
+- Notifications use modern `UNUserNotificationCenter`.
 
 ## License
 

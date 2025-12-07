@@ -6,6 +6,7 @@ class PermanentStorage {
   private enum StorageKey: String {
     case showsNotification = "show-notification"
     case launchedForTheFirstTime = "launched-for-the-first-time"
+    case inputSourceOrder = "input-source-order"
   }
 
   private static func bool(forKey key: StorageKey, default defaultValue: Bool) -> Bool {
@@ -31,6 +32,15 @@ class PermanentStorage {
     }
     set {
       set(newValue, forKey: .launchedForTheFirstTime)
+    }
+  }
+
+  static var inputSourceOrder: [String] {
+    get {
+      return defaults.array(forKey: StorageKey.inputSourceOrder.rawValue) as? [String] ?? []
+    }
+    set {
+      defaults.set(newValue, forKey: StorageKey.inputSourceOrder.rawValue)
     }
   }
 }

@@ -285,8 +285,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="448" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
-                    </scrollView>
-                </viewController>
+                </scrollView>
+                <connections>
+                    <outlet property="tableView" destination="biS-0R-WsE" id="VwY-v4-sPX"/>
+                </connections>
+            </viewController>
                 <customObject id="iGh-Aw-zBQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="396" y="524"/>

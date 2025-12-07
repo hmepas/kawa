@@ -58,6 +58,27 @@ extension InputSource {
       InputSource(tisInputSource: $0)
     }
   }
+
+  static func orderedSources(using order: [String]) -> [InputSource] {
+    let allSources = sources
+    var ordered: [InputSource] = []
+    var remaining = Dictionary(uniqueKeysWithValues: allSources.map { ($0.id, $0) })
+
+    for id in order {
+      if let source = remaining.removeValue(forKey: id) {
+        ordered.append(source)
+      }
+    }
+
+    // append any new sources that were not previously saved
+    ordered.append(contentsOf: remaining.values.sorted { $0.name < $1.name })
+    return ordered
+  }
+
+  static var current: InputSource? {
+    guard let current = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue() else { return nil }
+    return InputSource(tisInputSource: current)
+  }
 }
 
 private extension URL {

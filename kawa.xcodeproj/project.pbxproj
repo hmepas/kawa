@@ -18,6 +18,8 @@
 		CC6D8ED51B654099005682C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6D8ED31B654099005682C0 /* Main.storyboard */; };
 		CC6D8EEB1B654143005682C0 /* InputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D8EEA1B654143005682C0 /* InputSourceManager.swift */; };
 		CCB5F9A52C3A1B3E00D43F0A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */; };
+		CCF87D132C3A3AF100C181C4 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */; };
+		CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */; };
 		CCB5F9B62C3A2A8D00D43F0A /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = CCB5F9B72C3A2A8D00D43F0A /* MASShortcut */; };
 		EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 		CC6D8EEA1B654143005682C0 /* InputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSourceManager.swift; sourceTree = "<group>"; };
 		DE8850D624B633EC002964E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
+		CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysAllowShortcutValidator.swift; sourceTree = "<group>"; };
 		EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +82,9 @@
 				CC69E0771B66415300A92F58 /* ShortcutViewController.swift */,
 				CC1FEF6E1B685FD3005E9BC8 /* ShortcutCellView.swift */,
 				CC6D8EEA1B654143005682C0 /* InputSourceManager.swift */,
+				CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */,
 				CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */,
+				CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */,
 				CC4181671B6CB3CB007DA794 /* PreferencesViewController.swift */,
 				CC6D8ED11B654099005682C0 /* Images.xcassets */,
 				CC6D8ED31B654099005682C0 /* Main.storyboard */,
@@ -180,7 +186,9 @@
 				CC6D8ECE1B654099005682C0 /* AppDelegate.swift in Sources */,
 				CC4065BE1B6D334B000E1E87 /* PermanentStorage.swift in Sources */,
 				CC6D8EEB1B654143005682C0 /* InputSourceManager.swift in Sources */,
+				CCF87D132C3A3AF100C181C4 /* ShortcutManager.swift in Sources */,
 				CCB5F9A52C3A1B3E00D43F0A /* NotificationManager.swift in Sources */,
+				CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */,
 				EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */,
 				CC69E0781B66415300A92F58 /* ShortcutViewController.swift in Sources */,
 			);
