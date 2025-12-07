@@ -12,6 +12,11 @@
    brew install --cask hmepas/kawa/kawa # готовый .app из релиза
    ```
 
+Если tap живет прямо в этом репозитории (не в `homebrew-kawa`), подключай с URL:
+```bash
+brew tap hmepas/kawa https://github.com/hmepas/kawa
+```
+
 ## Release-пайплайн
 
 В корне проекта добавлен workflow `.github/workflows/release.yml`, который на теги собирает `Kawa.app` в Release и прикладывает `Kawa.zip` к GitHub Release. Это пригодится для cask-а (установка без Xcode).

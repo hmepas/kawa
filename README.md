@@ -15,7 +15,7 @@ shortcuts UI.
 ### Using [Homebrew](https://brew.sh/)
 
 ```shell
-brew tap hmepas/kawa
+brew tap hmepas/kawa https://github.com/hmepas/kawa
 brew install --cask hmepas/kawa/kawa
 ```
 

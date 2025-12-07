@@ -1,6 +1,6 @@
 cask "kawa" do
   version "0.1.1"
-  sha256 "49d1f869cf7187f284396761aa8323a051bd4c0d62bd386c47f1afe3015b2e15"
+  sha256 "6e497011580105e61d1ac6c5011fabfc90ac4cc8b45cf8547a526a62c9c870b6"
 
   url "https://github.com/hmepas/kawa/releases/download/v#{version}/Kawa.zip"
   name "Kawa"
