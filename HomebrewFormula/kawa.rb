@@ -8,8 +8,8 @@ class Kawa < Formula
   homepage "https://github.com/hmepas/kawa"
   url "https://github.com/hmepas/kawa.git",
       :using => :git,
-      :revision => "26055edb31f2334c0575dca40b0559b47f5fdf28"
-  version "0.0.1"
+      :revision => "06f71fb03de53d17f7b67b0e819a99049af33094"
+  version "0.1.0"
 
   depends_on :xcode => ["15.0", :build]
 
@@ -17,11 +17,11 @@ class Kawa < Formula
     system "xcodebuild",
            "-scheme", "kawa",
            "-configuration", "Release",
-           "SYMROOT=build",
+           "-derivedDataPath", "build",
            "CODE_SIGN_IDENTITY=",
            "CODE_SIGNING_REQUIRED=NO"
 
-    app_path = "build/Release/Kawa.app"
+    app_path = "build/Build/Products/Release/Kawa.app"
     prefix.install app_path
     bin.install_symlink "#{app_path}/Contents/MacOS/Kawa" => "kawa"
   end

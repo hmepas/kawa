@@ -112,6 +112,7 @@
 			buildPhases = (
 				CC6D8EC41B654099005682C0 /* Sources */,
 				CC6D8EC51B654099005682C0 /* Frameworks */,
+				CCCE7CF22C3A6A5A00A3F9A4 /* Prepare MASShortcut Bundle */,
 				CC6D8EC61B654099005682C0 /* Resources */,
 			);
 			buildRules = (
@@ -173,6 +174,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CCCE7CF22C3A6A5A00A3F9A4 /* Prepare MASShortcut Bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare MASShortcut Bundle";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail
+PACKAGES_BASE=\"${DERIVED_DATA_DIR:-${BUILD_ROOT%/Build/Products}}/SourcePackages\"
+PACKAGES_ROOT=\"${SOURCE_PACKAGES_DIR_PATH:-$PACKAGES_BASE}\"
+BUNDLE_SOURCE=\"${PACKAGES_ROOT}/checkouts/MASShortcut/build/${CONFIGURATION}/MASShortcut_MASShortcut.bundle\"
+ALT_SOURCE=\"${BUILT_PRODUCTS_DIR}/PackageFrameworks/MASShortcut_MASShortcut.bundle\"
+BUNDLE_DEST=\"${CONFIGURATION_BUILD_DIR}/MASShortcut_MASShortcut.bundle\"
+
+echo \"Preparing MASShortcut bundle\"
+echo \"Primary source: $BUNDLE_SOURCE\"
+echo \"Alternate source: $ALT_SOURCE\"
+echo \"Destination: $BUNDLE_DEST\"
+
+if [ -d \"$BUNDLE_DEST\" ]; then
+  echo \"Bundle already present; skipping copy\"
+  exit 0
+fi
+
+if [ -d \"$BUNDLE_SOURCE\" ]; then
+  mkdir -p \"$(dirname \"$BUNDLE_DEST\")\"
+  rsync -a \"$BUNDLE_SOURCE\" \"$BUNDLE_DEST\"
+elif [ -d \"$ALT_SOURCE\" ]; then
+  mkdir -p \"$(dirname \"$BUNDLE_DEST\")\"
+  rsync -a \"$ALT_SOURCE\" \"$BUNDLE_DEST\"
+else
+  echo \"MASShortcut bundle not found; skipping copy\"
+fi
+";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC6D8EC41B654099005682C0 /* Sources */ = {

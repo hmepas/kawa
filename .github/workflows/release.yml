@@ -22,23 +22,23 @@ jobs:
           xcodebuild \
             -scheme kawa \
             -configuration Release \
-            "SYMROOT=build" \
+            -derivedDataPath build \
             "CODE_SIGN_IDENTITY=" \
             "CODE_SIGNING_REQUIRED=NO"
 
       - name: Zip app
         run: |
-          cd build/Release
+          cd build/Build/Products/Release
           zip -r Kawa.zip Kawa.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Kawa.zip
-          path: build/Release/Kawa.zip
+          path: build/Build/Products/Release/Kawa.zip
 
       - name: Attach to GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: build/Release/Kawa.zip
+          files: build/Build/Products/Release/Kawa.zip

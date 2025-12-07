@@ -8,7 +8,8 @@
 4) Запушь репозиторий. Подключение пользователем:
    ```bash
    brew tap hmepas/kawa   # или hmepas/tap
-   brew install hmepas/kawa/kawa
+   brew install hmepas/kawa/kawa        # формула из исходников
+   brew install --cask hmepas/kawa/kawa # готовый .app из релиза
    ```
 
 ## Release-пайплайн
