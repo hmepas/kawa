@@ -15,8 +15,8 @@ shortcuts UI.
 ### Using [Homebrew](https://brew.sh/)
 
 ```shell
-brew update
-brew install --cask kawa
+brew tap hmepas/kawa
+brew install hmepas/kawa/kawa
 ```
 
 ### Manually
@@ -42,6 +42,8 @@ command line:
 ```bash
 xcodebuild -resolvePackageDependencies
 xcodebuild -scheme kawa -configuration Debug
+# release build:
+xcodebuild -scheme kawa -configuration Release SYMROOT=build
 ```
 
 ## What's new in this fork
