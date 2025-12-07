@@ -8,8 +8,8 @@ class Kawa < Formula
   homepage "https://github.com/hmepas/kawa"
   url "https://github.com/hmepas/kawa.git",
       :using => :git,
-      :revision => "06f71fb03de53d17f7b67b0e819a99049af33094"
-  version "0.1.0"
+      :revision => "4e4a4fab3f1f4d57ec0a45e1c718c2dab811bf98"
+  version "0.1.1"
 
   depends_on :xcode => ["15.0", :build]
 
