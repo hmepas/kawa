@@ -9,6 +9,17 @@ cask "kawa" do
 
   app "Kawa.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Kawa.app"],
+                   sudo: false
+  end
+
+  caveats <<~EOS
+    macOS may still warn about the app coming from the internet. If that happens:
+      xattr -dr com.apple.quarantine /Applications/Kawa.app
+  EOS
+
   zap trash: [
     "~/Library/Application Support/Kawa",
     "~/Library/Caches/net.noraesae.Kawa",
