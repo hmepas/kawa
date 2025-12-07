@@ -6,9 +6,10 @@
 class Kawa < Formula
   desc "Menu bar input source switcher with custom shortcuts"
   homepage "https://github.com/hmepas/kawa"
-  url "https://github.com/hmepas/kawa.git", :using => :git
-  # set a stable tag/revision when releasing
-  version "HEAD"
+  url "https://github.com/hmepas/kawa.git",
+      :using => :git,
+      :revision => "26055edb31f2334c0575dca40b0559b47f5fdf28"
+  version "0.0.1"
 
   depends_on :xcode => ["15.0", :build]
 

@@ -1,0 +1,44 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build-release:
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve packages
+        run: xcodebuild -resolvePackageDependencies
+
+      - name: Build Kawa (Release)
+        run: |
+          xcodebuild \
+            -scheme kawa \
+            -configuration Release \
+            "SYMROOT=build" \
+            "CODE_SIGN_IDENTITY=" \
+            "CODE_SIGNING_REQUIRED=NO"
+
+      - name: Zip app
+        run: |
+          cd build/Release
+          zip -r Kawa.zip Kawa.app
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Kawa.zip
+          path: build/Release/Kawa.zip
+
+      - name: Attach to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/Release/Kawa.zip
